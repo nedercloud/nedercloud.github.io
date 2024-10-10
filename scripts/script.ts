@@ -8,7 +8,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (articlesList) {
         articles.forEach(article => {
             const articleItem = document.createElement("div");
-            articleItem.innerHTML = `<a href="${article.link}">${article.title}</a>`;
+            articleItem.className = "article-item";
+            articleItem.innerHTML = `<a href="${article.link}" class="article-link">${article.title}</a>`;
             articlesList.appendChild(articleItem);
         });
     }
