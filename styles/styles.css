@@ -65,11 +65,13 @@ header.scrolled {
     background-image: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
     color: #ffffff;
     overflow: hidden;
+    background-color: #203a43; /* Fallback color */
 }
 
 .hero-content {
     max-width: 600px;
-    animation: fadeIn 1s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .btn-primary {
@@ -113,7 +115,7 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: slideIn 1s ease-in-out;
+    animation: slideIn 1s ease-in-out forwards;
 }
 
 .project-item:hover {
@@ -148,7 +150,6 @@ footer {
 }
 
 .fade-in {
-    opacity: 0;
     animation: fadeIn 1s forwards;
 }
 
