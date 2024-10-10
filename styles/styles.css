@@ -1,10 +1,11 @@
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #121212;
+    background-color: #111111;
     color: #ffffff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -14,6 +15,11 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+header.scrolled {
+    background-color: #0f2027;
 }
 
 .nav-container {
@@ -50,27 +56,76 @@ header {
     color: #00bcd4;
 }
 
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.btn-primary {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7;
+}
+
 .content-section {
     padding: 100px 20px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
 }
 
 h2 {
     font-weight: 700;
     color: #00bcd4;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideIn 1s ease-in-out;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .social-links {
     list-style: none;
     padding: 0;
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -90,4 +145,44 @@ footer {
     padding: 20px;
     text-align: center;
     margin-top: 40px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.fade-in.delay-2 {
+    animation-delay: 1s;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 1s forwards;
+}
+
+.slide-in.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.slide-in.delay-2 {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
